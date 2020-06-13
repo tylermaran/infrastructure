@@ -57,7 +57,7 @@ caddy_config: |
         if {path} not /
         to {path} {path}/ /index.php?title={1}
     }
-    rewrite / /index.html
+    rewrite / /wiki/Noisebridge
   }
 
   www.noisebridge.net/pipermail/ {
