@@ -48,16 +48,12 @@ caddy_config: |
       X-Content-Type-Options "nosniff"
     }
 
-    fastcgi / unix:/run/php/php7.0-fpm.sock php {
-        except /images
-    }
+    fastcgi / unix:/run/php/php7.0-fpm.sock php
 
     rewrite / {
         r /(.*)
-        if {path} not /
-        to {path} {path}/ /index.php?title={1}
+        to /index.php?title={1}
     }
-    rewrite / /wiki/Noisebridge
   }
 
   www.noisebridge.net/pipermail/ {
